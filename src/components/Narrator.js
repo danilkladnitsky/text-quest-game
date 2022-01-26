@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { GameContext } from '../context/GameContext';
 import LayoutFrame from './LayoutFrame';
 
 const Narrator = () => {
+  const {
+    values: { stage },
+  } = useContext(GameContext);
+
   return (
     <LayoutFrame borderBottom height='300px'>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </Text>
+      <Text>{stage.narrator}</Text>
     </LayoutFrame>
   );
 };

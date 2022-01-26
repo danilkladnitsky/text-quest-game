@@ -1,35 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { ALERT_COLOR, DEFAULT_COLOR } from '../consts';
-import FlickerAnimation from './FlickerAnimation';
+import { GameContext } from '../context/GameContext';
 import LayoutFrame from './LayoutFrame';
+import Timer from './Timer';
 
 const NavigationBar = () => {
-  return (
-    <LayoutFrame flex={1} justifyContent='space-between' borderBottom>
-      <CurrentLocation>Гостиная</CurrentLocation>
-      <FlickerAnimation>
-        <GameTarget>
-          {'>>> '}Найти выход{' <<<'}
-        </GameTarget>
-      </FlickerAnimation>
+  const {
+    values: { stage },
+  } = useContext(GameContext);
 
-      <Timer hurry>05:00</Timer>
+  return (
+    <LayoutFrame
+      flex={1}
+      justifyContent='space-between'
+      borderBottom
+      textCenter
+      alignCenter>
+      <CurrentLocation>{stage.place}</CurrentLocation>
+      <GameTarget>Цель "Найти выход"</GameTarget>
+
+      <Timer />
     </LayoutFrame>
   );
 };
 
 const CurrentLocation = styled.div`
-  flex: 0.2;
-  text-align: left;
+  position: absolute;
 `;
 
-const GameTarget = styled.div``;
-
-const Timer = styled.div`
-  flex: 0.2;
-  text-align: right;
-  color: ${(props) => (props.hurry ? ALERT_COLOR : DEFAULT_COLOR)};
+const GameTarget = styled.div`
+  font-size: 0.8em;
+  flex: 1;
 `;
 
 export default NavigationBar;

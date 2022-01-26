@@ -1,23 +1,17 @@
 import styled from 'styled-components';
 import background from './assets/mm.jpg';
-import StageImage from './components/StageImage';
-import Narrator from './components/Narrator';
-import NavigationBar from './components/NavigationBar';
-import StageActions from './components/StageActions';
-
-import { BACKGROUND_COLOR, DEFAULT_COLOR } from './consts';
+import { GameProvider } from './context/GameContext';
+import StartGamePopup from './components/StartGamePopup';
+import Game from './components/Game';
 
 const App = () => {
   return (
-    <AppWrapper>
-      <AppBackground backgroundPath={background} />
-      <GameFrame>
-        <NavigationBar />
-        <StageImage />
-        <Narrator />
-        <StageActions />
-      </GameFrame>
-    </AppWrapper>
+    <GameProvider>
+      <AppWrapper>
+        <AppBackground backgroundPath={background} />
+        <Game />
+      </AppWrapper>
+    </GameProvider>
   );
 };
 
@@ -41,15 +35,6 @@ const AppBackground = styled.div`
   height: 100%;
   background: url(${(props) => props.backgroundPath}) #000;
   opacity: 0.08;
-`;
-
-const GameFrame = styled.div`
-  height: 700px;
-  min-width: 300px;
-  max-width: 800px;
-  box-sizing: border-box;
-  border: 2px solid ${BACKGROUND_COLOR};
-  color: ${DEFAULT_COLOR};
 `;
 
 export default App;
