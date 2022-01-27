@@ -16,8 +16,7 @@ const StartGamePopup = () => {
   };
 
   const handleGameDecline = () => {
-    window.location.href =
-      'https://vk.com/itmostudents?message=Вы вышли%20из%20симуляции';
+    window.location.href = 'https://vk.com/missteritmo2022';
   };
 
   return (
