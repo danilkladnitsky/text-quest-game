@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Promo = () => {
   return (
     <VideoWrapper
-      src='https://vk.com/video_ext.php?oid=280158306&id=456239406&hash=a32f5b5e5aebeded&hd=1&autoplay=1'
+      src='https://vk.com/video_ext.php?oid=91390312&id=456240826&hash=fea33455ebef84f0&hd=2&autoplay=1'
       allow='autoplay; encrypted-media; fullscreen; picture-in-picture;'
       frameborder='0'
       allowfullscreen
