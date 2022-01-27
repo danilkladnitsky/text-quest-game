@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import livingRoom from '../assets/living_room.jpg';
+import { GameContext } from '../context/GameContext';
 
 const StageImage = (props) => {
+  const {
+    values: { stage },
+  } = useContext(GameContext);
+
   return (
-    <ImageWrapper height='150px'>
-      <ImageBackground imagePath={livingRoom} />
+    <ImageWrapper height='200px'>
+      <ImageBackground imagePath={stage.image} />
       <ImageText></ImageText>
     </ImageWrapper>
   );
@@ -31,7 +36,6 @@ const ImageBackground = styled.div`
   background-image: url(${(props) => props.imagePath});
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
 `;
 
 const ImageText = styled.h4`

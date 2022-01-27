@@ -19,7 +19,7 @@ const StageActions = () => {
   };
 
   return (
-    <LayoutFrame>
+    <LayoutFrame maxHeight='200px'>
       <StageActionsWrapper>
         {stage.actions
           .filter((action) =>

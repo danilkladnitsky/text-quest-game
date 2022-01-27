@@ -1,5 +1,21 @@
+import Bed from '../assets/locations/bed.png';
+import Bedroom from '../assets/locations/bedroom.png';
+import Clocks from '../assets/locations/clocks.png';
+import Closet from '../assets/locations/closet.png';
+import Default from '../assets/locations/default.png';
+import Fridge from '../assets/locations/fridge.png';
+import Hall from '../assets/locations/hall.png';
+import Kitchen from '../assets/locations/kitchen.png';
+import Living_Room from '../assets/locations/living_room.png';
+import Pedestal from '../assets/locations/pedestal.png';
+import Plate from '../assets/locations/plate.png';
+import Sofa from '../assets/locations/sofa.png';
+import Table from '../assets/locations/table.png';
+import Window from '../assets/locations/window.png';
+
 export const gameStages = {
   AWAKENING: {
+    image: Living_Room,
     place: 'Пол гостиной',
     narrator: `Вы проснулись на полу в темной комнате.\n
     Мельком оглядев пространство около себя, вы замечаете заколоченные намертво окна, содранные обои и беспорядок в квартире.
@@ -17,6 +33,7 @@ export const gameStages = {
   },
 
   LOOK_AROUND: {
+    image: Living_Room,
     place: 'Гостиная',
     narrator:
       'Оглядев квартиру, вы замечаете, что она состоит как минимум из трёх комнат: спальня, кухня и гостиная, где вы, собственно, и находитесь.',
@@ -36,6 +53,7 @@ export const gameStages = {
   },
 
   KITCHEN_AND_BEDROOM_ROOMS: {
+    image: Hall,
     place: 'Коридор',
     narrator:
       'Вы находитесь в коридоре, разделяющий гостиную, спальню и кухню.',
@@ -58,6 +76,7 @@ export const gameStages = {
   },
 
   KITCHEN: {
+    image: Kitchen,
     place: 'Кухня',
     narrator:
       'Вы находитесь на маленькой кухне. В комнате вы видите стол со скатертью в виде ромашек, грязную и пыльную плиту, а также холодильник.',
@@ -73,6 +92,7 @@ export const gameStages = {
   },
 
   TABLE: {
+    image: Table,
     place: 'Кухонный стол',
     narrator:
       'Сев за стол, вы резко почувствовали сильную усталость и упадок сил. Вы пытаетесь бороться с сонливостью, но отчаянно проигрываете. Вы засыпаете.',
@@ -83,6 +103,7 @@ export const gameStages = {
   },
 
   RESIST: {
+    image: Table,
     place: 'Кухонный стол',
     narrator:
       'Спустя несколько секунд, вы всё же одолеваете сонливость и встаёте из-за стола.',
@@ -90,6 +111,7 @@ export const gameStages = {
   },
 
   PLATE: {
+    image: Plate,
     place: 'Кухонная плита',
     narrator:
       'Плита как плита. Четыре конфорки, одна занята кастрюлей, а другая сковородой. Судя по содержимому, прежний хозяин квартиры хотел приготовить что-то из вьетнамской кухни. Пахнет соответствующе.',
@@ -97,6 +119,7 @@ export const gameStages = {
   },
 
   FRIDGE: {
+    image: Fridge,
     place: 'Холодильник',
     narrator:
       'Вы пытаетесь открыть холодильник, но он не поддаётся. Вы тянете всё сильнее и сильнее за ручки. Через полминуты отчаянных усилий, дверка резко открывается и сбивает вас. Вы падаете на кухонный пол и ударяетесь головой. Рассудок ваш мутнеет, и вы чувствуете, что проваливаетесь.',
@@ -104,6 +127,7 @@ export const gameStages = {
   },
 
   BEDROOM: {
+    image: Bedroom,
     place: 'Спальня',
     narrator:
       'Находясь в спальне, вы замечаете одноместную кровать, стоящую в центре комнаты, высокий шкаф из темного дереве и тумбу, которая находится в углу. Комнату освещает свет, доходящий с гостиной.',
@@ -123,6 +147,7 @@ export const gameStages = {
   },
 
   CLOSET: {
+    image: Closet,
     place: 'Шкаф',
     narrator:
       'Как ни странно, шкаф тоже заколочен досками. Своим телом вы чувствуете холодные потоки воздуха, которые исходят от него.',
@@ -135,6 +160,7 @@ export const gameStages = {
   },
 
   PEDESTAL: {
+    image: Pedestal,
     place: 'Тумба',
     narrator: 'На пыльной тумбе вы замечаете бумажку, похожую на письмо.',
     actions: [
@@ -150,6 +176,7 @@ export const gameStages = {
   },
 
   PEDESTAL_READ_LETTER: {
+    image: Pedestal,
     place: 'Тумба',
     narrator:
       '"тесен но лсымс йикобулг еелоб мет ,нос ястежак ман мыннартс еелоб меЧ"',
@@ -162,6 +189,7 @@ export const gameStages = {
   },
 
   BED: {
+    image: Bed,
     place: 'Кровать',
     narrator:
       'Обычная на вид кровать. Не то чтобы дорогая, да и на вид не самая удобная. Две подушки, одеяло и наволочка. Все синего цвета с голубым оттенком, но из-за тусклого освещения кровать кажется мрачной и не располагающей к хорошему и крепкому сну.',
@@ -173,6 +201,7 @@ export const gameStages = {
   },
 
   UNDER_BED: {
+    image: Bed,
     place: 'Кровать',
     narrator:
       'Под кроватью настолько темно, что вы не видите ничего. Свет как будто поглощается этим пространством и не возвращается назад.',
@@ -183,6 +212,7 @@ export const gameStages = {
   },
 
   HAND_UNDER_BED: {
+    image: Bed,
     place: 'Кровать',
     narrator:
       'Что-то хватает вашу руку, но спустя секунду, отпускает. Достав руку из-под кровати, вы видите на ней надпись.',
@@ -193,12 +223,14 @@ export const gameStages = {
   },
 
   HAND_UNDER_BED_READ: {
+    image: Bed,
     place: 'Кровать',
     narrator: '"?ьсолапс каК"',
     actions: [{ text: 'Обратно', nextStage: 'BED' }],
   },
 
   LIVING_ROOM: {
+    image: Living_Room,
     place: 'Гостиная',
     narrator:
       'В гостиной вы замечаете старый диван, настенные часы и заколоченное окно.',
@@ -217,6 +249,7 @@ export const gameStages = {
   },
 
   LIVING_ROOM_SOFA: {
+    image: Sofa,
     place: 'Диван в гостиной',
     narrator:
       'Плохо пахнущий, очень старый и разодранный диван. Явно не из Икеи, скорее с Авито.',
@@ -230,13 +263,15 @@ export const gameStages = {
   },
 
   SLEEP: {
-    place: 'Диван в гостиной',
+    image: Default,
+    place: 'Zzz',
     narrator:
       'Голова ваша становится тяжелее, веки закрываются. Вы чувствуете, что засыпаете.',
     actions: [{ text: 'Zzz', nextStage: 'AWAKENING' }],
   },
 
   LIVING_ROOM_CLOCKS: {
+    image: Clocks,
     place: 'Настенные часы в гостиной',
     narrator:
       'Вы видите винтажные настенные часы, прибитые наспех. Замечаете, что они идут обратно. Больше ничего интересного здесь нет.',
@@ -244,6 +279,7 @@ export const gameStages = {
   },
 
   LIVING_ROOM_WINDOW: {
+    image: Window,
     place: 'Окна в гостиной',
     narrator:
       'Вы замечаете заколоченные наглухо окна, через которые еле слышно звук снаружи. Также вы замечаете одну деталь: на досках белой выцветшей краской написано что-то неразборчивое, но если приглядеться - можно попробовать прочитать. ',
@@ -255,6 +291,7 @@ export const gameStages = {
   },
 
   LIVING_ROOM_WINDOW_READ: {
+    image: Window,
     place: 'Заколоченное окно',
     narrator:
       'Присмотревшись к надписи, вы видите следующие символы: ЙАВАТСВ ЕН - ЯСЬШЕНСОРП АВОНС АДГОК. Похоже, что буквы написаны задом наперёд.',
@@ -262,7 +299,9 @@ export const gameStages = {
   },
 
   LIVING_ROOM_WINDOW_LISTEN: {
+    image: Window,
     place: 'Заколоченное окно',
+
     narrator:
       'Вы слышите тихий звук струящейся воды, стекающей в какой-то резервуар. Что-то похожее вы слышали, когда гуляли в парке возле фонтанов. Но зачем на улице фонтан?',
     actions: [
@@ -271,6 +310,7 @@ export const gameStages = {
   },
 
   AWAKENING_PLACE: {
+    image: Living_Room,
     place: 'Место пробуждения',
     narrator:
       'Вы вернулись к месту, где впервые проснулись в этой квартире. На этот раз оно не выглядит так стрёмно и неприятно.',
@@ -281,6 +321,7 @@ export const gameStages = {
   },
 
   FINAL: {
+    image: Default,
     place: 'Пол гостиной',
     narrator:
       'Вы легли спать в том же месте, где и проснулись. Вы чувствуете облегчение. Тело расслабляется, а ваше дыхание успокаивается. Осталось только закрыть глаза, и этот кошмар закончится.',
@@ -288,6 +329,7 @@ export const gameStages = {
   },
 
   END: {
+    image: Default,
     place: 'Лимб',
     narrator:
       'SYSTEM CALL >>> PROCEED EXPERIMENT EXIT >>> SIMULATION WAS COMPLETED',
