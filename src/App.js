@@ -2,8 +2,19 @@ import styled from 'styled-components';
 import background from './assets/mm.jpg';
 import { GameProvider } from './context/GameContext';
 import Game from './components/Game';
+import { useEffect } from 'react';
 
 const App = () => {
+  useEffect(() => {
+    const appHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+
+    window.addEventListener('resize', appHeight);
+    appHeight();
+  }, []);
+
   return (
     <GameProvider>
       <AppWrapper>
@@ -24,6 +35,10 @@ const AppWrapper = styled.div`
   background-color: #000;
   box-sizing: border-box;
   padding: 15px;
+
+  @media not all and (hover: hover) {
+    height: var(--app-height);
+  }
 `;
 
 const AppBackground = styled.div`
