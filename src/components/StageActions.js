@@ -6,7 +6,7 @@ import { GameContext } from '../context/GameContext';
 
 const StageActions = () => {
   const {
-    values: { stage },
+    values: { stage, awakenings },
     actions: { updateStage, finishGame },
   } = useContext(GameContext);
 
@@ -17,16 +17,24 @@ const StageActions = () => {
 
     return () => updateStage(newStage);
   };
+
   return (
     <LayoutFrame>
       <StageActionsWrapper>
-        {stage.actions?.map((action, index) => (
-          <ActionButton
-            text={action.text}
-            key={`${action.text}#${index}`}
-            clickCallback={createActionCallback(action.nextStage)}
-          />
-        ))}
+        {stage.actions
+          .filter((action) =>
+            action.visibleAfter ? awakenings > action.visibleAfter : true
+          )
+          .filter((action) =>
+            action.invisibleAfter ? action.invisibleAfter > awakenings : true
+          )
+          ?.map((action, index) => (
+            <ActionButton
+              text={action.text}
+              key={`${action.text}#${index}`}
+              clickCallback={createActionCallback(action.nextStage)}
+            />
+          ))}
       </StageActionsWrapper>
     </LayoutFrame>
   );

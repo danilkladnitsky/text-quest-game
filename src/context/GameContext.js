@@ -5,6 +5,8 @@ import { gameStages } from '../stages/gameStages';
 export const GameContext = React.createContext();
 
 export function GameProvider(props) {
+  const [awakenings, setAwakenings] = useState(1);
+
   const restoreStage = () => {
     const savedStage = localStorage.getItem('GAME_STAGE');
 
@@ -28,6 +30,10 @@ export function GameProvider(props) {
       return;
     }
 
+    if (newStage === 'AWAKENING') {
+      setAwakenings(awakenings + 1);
+    }
+
     saveStage(newStage);
     setStage(stageObject);
   };
@@ -49,7 +55,7 @@ export function GameProvider(props) {
     <GameContext.Provider
       value={{
         actions: { setGameStatus, updateStage, finishGame },
-        values: { gameStatus, stage },
+        values: { gameStatus, stage, awakenings },
       }}>
       {props.children}
     </GameContext.Provider>

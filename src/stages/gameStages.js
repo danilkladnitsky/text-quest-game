@@ -8,7 +8,11 @@ export const gameStages = {
     Что будете делать?`,
     actions: [
       { text: 'Встать с пола и оглядеться', nextStage: 'LOOK_AROUND' },
-      { text: 'Попытаться снова заснуть', nextStage: 'FINAL' },
+      {
+        text: 'Попытаться снова заснуть',
+        nextStage: 'FINAL',
+        visibleAfter: 3,
+      },
     ],
   },
 
@@ -17,11 +21,16 @@ export const gameStages = {
     narrator:
       'Оглядев квартиру, вы замечаете, что она состоит как минимум из трёх комнат: спальня, кухня и гостиная, где вы, собственно, и находитесь.',
     actions: [
-      { text: 'Изучить гостиную', nextStage: 'LIVING_ROOM' },
-      { text: 'Изучить комнаты', nextStage: 'KITCHEN_AND_BEDROOM_ROOMS' },
+      { text: 'Изучить гостиную', nextStage: 'LIVING_ROOM', invisibleAfter: 6 },
+      {
+        text: 'Изучить комнаты',
+        nextStage: 'KITCHEN_AND_BEDROOM_ROOMS',
+        invisibleAfter: 5,
+      },
       {
         text: 'Вернуться к месту пробуждения',
         nextStage: 'AWAKENING_PLACE',
+        visibleAfter: 1,
       },
     ],
   },
@@ -31,8 +40,16 @@ export const gameStages = {
     narrator:
       'Вы находитесь в коридоре, разделяющий гостиную, спальню и кухню.',
     actions: [
-      { text: 'Пойти в спальню', nextStage: 'BEDROOM' },
-      { text: 'Пойти на кухню', nextStage: 'KITCHEN' },
+      {
+        text: 'Пойти в спальню',
+        nextStage: 'BEDROOM',
+        invisibleAfter: 3,
+      },
+      {
+        text: 'Пойти на кухню',
+        nextStage: 'KITCHEN',
+        invisibleAfter: 4,
+      },
       {
         text: 'Пойти в гостиную',
         nextStage: 'LIVING_ROOM',
@@ -58,7 +75,7 @@ export const gameStages = {
   TABLE: {
     place: 'Кухонный стол',
     narrator:
-      'Сев за стол, вы резко почувствовали сильную усталось и упадок сил. Вы пытаетесь бороться с сонливостью, но отчаянно проигрываете. Вы засыпаете.',
+      'Сев за стол, вы резко почувствовали сильную усталость и упадок сил. Вы пытаетесь бороться с сонливостью, но отчаянно проигрываете. Вы засыпаете.',
     actions: [
       { text: 'Не сопротивляться', nextStage: 'SLEEP' },
       { text: 'Сопротивляться', nextStage: 'RESIST' },
@@ -92,10 +109,11 @@ export const gameStages = {
       'Находясь в спальне, вы замечаете одноместную кровать, стоящую в центре комнаты, высокий шкаф из темного дереве и тумбу, которая находится в углу. Комнату освещает свет, доходящий с гостиной.',
     actions: [
       { text: 'Изучить кровать', nextStage: 'BED' },
-      { text: 'Изучить шкаф', nextStage: 'CLOSET' },
+      { text: 'Изучить шкаф', nextStage: 'CLOSET', invisibleAfter: 2 },
       {
         text: 'Изучить тумбу',
         nextStage: 'PEDESTAL',
+        visibleAfter: 1,
       },
       {
         text: 'Обратно',
