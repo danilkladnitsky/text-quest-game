@@ -28,8 +28,13 @@ const Button = styled.button`
   opacity: 0.4;
   align-items: center;
   cursor: pointer;
+
   &:hover {
     opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 15px;
   }
 `;
 
@@ -40,6 +45,12 @@ const ButtonSymbol = styled.span`
   color: #fff;
   font-size: 1.3em;
   font-family: 'Press Start 2P';
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+    top: 1px;
+    right: 10px;
+  }
 `;
 
 const Text = styled.span`
@@ -49,6 +60,10 @@ const Text = styled.span`
   font-weight: 600;
   text-align: left;
   line-height: 1.3em;
+
+  @media (max-width: 768px) {
+    font-size: 0.9em;
+  }
 `;
 
 export default ActionButton;

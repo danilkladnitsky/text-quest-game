@@ -8,40 +8,37 @@ import Promo from './Promo';
 import StageActions from './StageActions';
 import StageImage from './StageImage';
 import StartGamePopup from './StartGamePopup';
+import Timer from './Timer';
 
 const Game = () => {
   const {
     values: { gameStatus },
   } = useContext(GameContext);
 
-  const GameLayout = useMemo(
-    () => (
-      <GameFrame>
-        <NavigationBar />
-        <StageImage />
-        <Narrator />
-        <StageActions />
-      </GameFrame>
-    ),
-    []
-  );
-
-  const handleGameStatuses = () => {
+  const CurrentGameStep = useMemo(() => {
     switch (gameStatus) {
       case GAME_STATUSES.PENDING:
         return <StartGamePopup />;
       case GAME_STATUSES.FINISHED:
         return <Promo />;
       default:
-        return GameLayout;
+        return (
+          <GameFrame>
+            <NavigationBar />
+            <StageImage />
+            <Narrator />
+            <StageActions />
+          </GameFrame>
+        );
     }
-  };
+  }, [gameStatus]);
 
-  return handleGameStatuses();
+  return CurrentGameStep;
 };
 
 const GameFrame = styled.div`
   width: 800px;
+  height: 600px;
   box-sizing: border-box;
   border: 2px solid ${BACKGROUND_COLOR};
   color: ${DEFAULT_COLOR};

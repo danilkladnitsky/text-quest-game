@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import background from './assets/mm.jpg';
 import { GameProvider } from './context/GameContext';
-import StartGamePopup from './components/StartGamePopup';
 import Game from './components/Game';
 
 const App = () => {
@@ -24,7 +23,7 @@ const AppWrapper = styled.div`
   width: 100%;
   background-color: #000;
   box-sizing: border-box;
-  padding: 30px;
+  padding: 15px;
 `;
 
 const AppBackground = styled.div`

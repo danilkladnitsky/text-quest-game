@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import styled from 'styled-components';
 import { GameContext } from '../context/GameContext';
 import LayoutFrame from './LayoutFrame';
 import Timer from './Timer';
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
   const {
     values: { stage },
   } = useContext(GameContext);
@@ -19,18 +19,24 @@ const NavigationBar = () => {
       <CurrentLocation>{stage.place}</CurrentLocation>
       <GameTarget>Цель "Найти выход"</GameTarget>
 
-      <Timer />
+      {/* <Timer /> */}
     </LayoutFrame>
   );
 };
 
 const CurrentLocation = styled.div`
   position: absolute;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const GameTarget = styled.div`
   font-size: 0.8em;
   flex: 1;
+  @media (max-width: 768px) {
+    text-align: left;
+  }
 `;
 
-export default NavigationBar;
+export default React.memo(NavigationBar);

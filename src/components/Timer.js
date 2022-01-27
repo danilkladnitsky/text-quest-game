@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Countdown from 'react-countdown';
-import { ALERT_COLOR, DEFAULT_COLOR, GAME_STATUSES } from '../consts';
+import { ALERT_COLOR, DEFAULT_COLOR } from '../consts';
 import { GameContext } from '../context/GameContext';
 
 const Timer = () => {
@@ -35,6 +35,9 @@ const TimerWrapper = styled.div`
   right: 15px;
   text-align: right;
   color: ${(props) => (props.hurry ? ALERT_COLOR : DEFAULT_COLOR)};
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+  }
 `;
 
-export default React.memo(Timer);
+export default Timer;

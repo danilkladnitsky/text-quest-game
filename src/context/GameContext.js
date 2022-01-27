@@ -39,7 +39,10 @@ export function GameProvider(props) {
   const [gameStatus, setGameStatus] = useState(savedGameStatus);
 
   const finishGame = () => {
-    setTimeout(() => setGameStatus(GAME_STATUSES.FINISHED), 0);
+    setTimeout(() => {
+      saveStage('AWAKENING');
+      setGameStatus(GAME_STATUSES.FINISHED);
+    }, 0);
   };
 
   return (

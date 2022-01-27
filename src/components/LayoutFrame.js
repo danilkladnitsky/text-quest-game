@@ -34,6 +34,10 @@ const Frame = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export default LayoutFrame;

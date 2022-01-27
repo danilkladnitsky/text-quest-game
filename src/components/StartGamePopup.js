@@ -51,6 +51,10 @@ const PopupWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.95);
   z-index: 10;
   color: #fff;
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 15px;
+  }
 `;
 
 const PopupText = styled.p`
@@ -59,6 +63,9 @@ const PopupText = styled.p`
   margin-bottom: 10px;
   line-height: 1.5em;
   font-size: 1.2em;
+  @media (max-width: 768px) {
+    font-size: 0.9em;
+  }
 `;
 
 export default StartGamePopup;

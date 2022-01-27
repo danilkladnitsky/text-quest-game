@@ -18,6 +18,9 @@ const Narrator = () => {
 const Text = styled.p`
   margin: 0px;
   line-height: 2em;
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
 `;
 
 export default Narrator;
