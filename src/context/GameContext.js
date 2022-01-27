@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
+import useSound from 'use-sound';
 import { GAME_STATUSES } from '../consts';
 import { gameStages } from '../stages/gameStages';
+
+import clickSfx from '../assets/sounds/click.wav';
 
 export const GameContext = React.createContext();
 
 export function GameProvider(props) {
+  const [play] = useSound(clickSfx, { volume: 0.1 });
+
+  const playClickSound = () => {
+    play();
+  };
+
   const [awakenings, setAwakenings] = useState(1);
 
   const restoreStage = () => {
@@ -34,6 +43,7 @@ export function GameProvider(props) {
       setAwakenings(awakenings + 1);
     }
 
+    playClickSound();
     saveStage(newStage);
     setStage(stageObject);
   };
